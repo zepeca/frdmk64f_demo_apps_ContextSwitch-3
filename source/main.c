@@ -57,56 +57,76 @@ static void delay(volatile int count)
 
 void task1(void *userdata)
 {
-	PRINTF(userdata);
-	PRINTF(": Running...1\n\r");
-	GPIO_PortClear(BOARD_LED_RED_GPIO, 1u << BOARD_LED_RED_GPIO_PIN);
-	delay(100);
-	GPIO_PortSet(BOARD_LED_RED_GPIO, 1u << BOARD_LED_RED_GPIO_PIN);
-	task_self_terminal();
+	PRINTF("Init task 1\n\r");
+
+    while(1){
+		task_suspend(-1);
+		PRINTF(userdata);
+		PRINTF("Running task 1\n\r");
+		GPIO_PortClear(BOARD_LED_RED_GPIO, 1u << BOARD_LED_RED_GPIO_PIN);
+		delay(100);
+		GPIO_PortSet(BOARD_LED_RED_GPIO, 1u << BOARD_LED_RED_GPIO_PIN);
+	}
 }
 
 void task2(void *userdata)
 {
-	PRINTF(userdata);
-	PRINTF(": Running...2\n\r");
-	GPIO_PortClear(BOARD_LED_GREEN_GPIO, 1u << BOARD_LED_GREEN_GPIO_PIN);
-	delay(100);
-	GPIO_PortSet(BOARD_LED_GREEN_GPIO, 1u << BOARD_LED_GREEN_GPIO_PIN);
-	task_self_terminal();
+	PRINTF("Init task 2\n\r");
+
+    while(1){
+		task_suspend(-1);
+		PRINTF(userdata);
+		PRINTF("Running task 2\n\r");
+		GPIO_PortClear(BOARD_LED_GREEN_GPIO, 1u << BOARD_LED_GREEN_GPIO_PIN);
+		delay(100);
+		GPIO_PortSet(BOARD_LED_GREEN_GPIO, 1u << BOARD_LED_GREEN_GPIO_PIN);
+	}
 }
 
 void task3(void *userdata)
 {
-	PRINTF(userdata);
-	PRINTF(": Running...3\n\r");
-	GPIO_PortClear(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
-	delay(100);
-	GPIO_PortSet(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
-	task_self_terminal();
+	PRINTF("Init task 3\n\r");
+
+    while(1){
+		task_suspend(-1);
+		PRINTF(userdata);
+		PRINTF("Running task 3\n\r");
+		GPIO_PortClear(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
+		delay(100);
+		GPIO_PortSet(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
+	}
 }
 
 void task4(void *userdata)
 {
-	PRINTF(userdata);
-	PRINTF(": Running...4\n\r");
-	GPIO_PortClear(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
-	GPIO_PortClear(BOARD_LED_GREEN_GPIO, 1u << BOARD_LED_GREEN_GPIO_PIN);
-	delay(100);
-	GPIO_PortSet(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
-	GPIO_PortSet(BOARD_LED_GREEN_GPIO, 1u << BOARD_LED_GREEN_GPIO_PIN);
-	task_self_terminal();
+	PRINTF("Init task 4\n\r");
+
+    while(1){
+		task_suspend(-1);
+		PRINTF(userdata);
+		PRINTF("Running task 4\n\r");
+		GPIO_PortClear(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
+		GPIO_PortClear(BOARD_LED_GREEN_GPIO, 1u << BOARD_LED_GREEN_GPIO_PIN);
+		delay(100);
+		GPIO_PortSet(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
+		GPIO_PortSet(BOARD_LED_GREEN_GPIO, 1u << BOARD_LED_GREEN_GPIO_PIN);
+	}
 }
 
 void task5(void *userdata)
 {
-	PRINTF(userdata);
-	PRINTF(": Running...5\n\r");
-	GPIO_PortClear(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
-	GPIO_PortClear(BOARD_LED_RED_GPIO, 1u << BOARD_LED_RED_GPIO_PIN);
-	delay(100);
-	GPIO_PortSet(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
-	GPIO_PortSet(BOARD_LED_RED_GPIO, 1u << BOARD_LED_RED_GPIO_PIN);
-	task_self_terminal();
+	PRINTF("Init task 5\n\r");
+
+    while(1){
+		task_suspend(-1);
+		PRINTF(userdata);
+		PRINTF("Running task 5\n\r");
+		GPIO_PortClear(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
+		GPIO_PortClear(BOARD_LED_RED_GPIO, 1u << BOARD_LED_RED_GPIO_PIN);
+		delay(100);
+		GPIO_PortSet(BOARD_LED_BLUE_GPIO, 1u << BOARD_LED_BLUE_GPIO_PIN);
+		GPIO_PortSet(BOARD_LED_RED_GPIO, 1u << BOARD_LED_RED_GPIO_PIN);
+	}
 }
 
 /*******************************************************************************
